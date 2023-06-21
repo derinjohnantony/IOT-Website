@@ -272,20 +272,36 @@ form {
     transform: translatex(100vw);
 }
 
-.newsignprompt {
+/* .newsignprompt {
     transform: translatex(-60vw);
+} */
+
+.newsignprompt {
+    transform: translatex(-90vw);
 }
 
-.newsignup12 {
+.newsignup12345 {
     transform: translatex(-45vw);
+    transition: transform 2s ease;
+    transition-delay: 1s;
+}
+.newsignup12 {
+    transform: translatex(-45vw) translateY(-4vh);
+    transition: transform 2s ease;
+    transition-delay: 1s;
+}
+
+.newsigninprompt12345 {
+    transform: translatex(55vw);
     transition: transform 2s ease;
     transition-delay: 1s;
 }
 
 .newsigninprompt {
-    transform: translatex(55vw);
+    transform: translatex(0vw) translateY(4vh);
     transition: transform 2s ease;
     transition-delay: 1s;
+    top: 84vh;
 }
 
 @media(max-width:1005px) {
@@ -298,7 +314,7 @@ form {
 
 @media(max-width:840px) {
 
-    .signin{
+    .signin {
         right: 25vw;
         left: 25vw;
         width: 50vw;
@@ -331,14 +347,43 @@ form {
     }
 }
 
-@media(max-width:490px){
+@media(max-width:490px) {
     .signin {
         right: 16vw;
         left: 16vw;
         width: 68vw;
     }
+
     .signup {
         left: 61vw;
         width: 68vw;
-    }       
+    }
+
+    .signinprompt,
+    .signupprompt {
+        font-size: 2.3vw;
+        top: 0vh;
+        width: 52vw;
+        left: 24vw;
+        right: 24vw;
+        margin-top: 74vh;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+    .social-text {
+        color: white;
+    }
+    .social-icon {
+        color: white;
+        border-color: white;
+    }
+    .circlediv {
+        transform: translatex(-49vw) translateY(85vw);
+    }
+    .iotimage{
+        display: none;
+    }
 }
