@@ -92,6 +92,7 @@
                     <a href="{% url 'changestatus' listdata.id %}" class="devicestatus">{{ listdata.status }}</a>
                     <a href="{% url 'deleteitem' listdata.id %}" class="gpi456"><i class="fa-solid fa-trash"></i></a>
                 </span>
+                
                 {% endfor %}
                 <form method="POST" action='new/saveitem' class="item-item" id="last-form">
                     {% csrf_token %}

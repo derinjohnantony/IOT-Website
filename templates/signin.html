@@ -148,12 +148,15 @@
         var signup1 = document.querySelector(".signup")
         var signinpr = document.querySelector(".signinprompt")
 
+        var news12 = 'newsignup12345'
+        var newsig = 'newsigninprompt12345'
 
         function checkScreenWidth(mediaQuery) {
             if (mediaQuery.matches) {
                 // Screen width is 450px or less
-                var news12 = 'newsignup12'
-                var newsig = 'newsigninprompt'
+                news12 = 'newsignup12'
+                newsig = 'newsigninprompt'
+                console.log("asjdfhalksdhflakjdsnlkasdfn")
             }
         }
 
@@ -163,8 +166,7 @@
         // Add event listener to continuously monitor the screen width
         mediaQuery.addListener(checkScreenWidth);
 
-        var news12 = 'newsignup12345'
-        var newsig = 'newsigninprompt12345'
+        
 
         function movebut() {
             circle.classList.add('newcircle')

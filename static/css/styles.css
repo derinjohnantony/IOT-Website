@@ -352,11 +352,13 @@ form {
         right: 16vw;
         left: 16vw;
         width: 68vw;
+        top: 6vh;
     }
 
     .signup {
         left: 61vw;
         width: 68vw;
+        top: 7vh;
     }
 
     .signinprompt,
@@ -366,12 +368,20 @@ form {
         width: 52vw;
         left: 24vw;
         right: 24vw;
-        margin-top: 74vh;
+        margin-top: 70vh;
         display: grid;
         align-content: center;
         justify-content: center;
         align-items: center;
         justify-items: center;
+    }
+    .signinprompt,
+    .signupprompt h2{
+        color: #ccc02c;
+    }
+    .signinprompt,
+    .signupprompt p{
+        color: white;
     }
     .social-text {
         color: white;
@@ -381,7 +391,8 @@ form {
         border-color: white;
     }
     .circlediv {
-        transform: translatex(-49vw) translateY(85vw);
+        transform: translatex(-78vw) translateY(72vw);
+        height: 175vw;
     }
     .iotimage{
         display: none;
