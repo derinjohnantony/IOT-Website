@@ -30,11 +30,15 @@ def index(request):
     return render(request, "signin.html")
 
 def dashboard(request):
-    context = {
-        "groupdata":groupdatainfo.objects.filter(userg = request.user.username).all(),
-        # "appliancedata":appliancesdatainfo.objects.filter(usera = request.user.username).all(),
-    }
-    return render(request, "dashboard.html", context)
+    if request.user.is_authenticated:
+        context = {
+            "groupdata":groupdatainfo.objects.filter(userg = request.user.username).all(),
+            # "appliancedata":appliancesdatainfo.objects.filter(usera = request.user.username).all(),
+        }
+        return render(request, "dashboard.html", context)
+    else:
+        messages.error(request, "Please Signin", extra_tags="danger")
+        return redirect('index')
 
 
 def savegroup(request):
@@ -158,6 +162,15 @@ def signup(request):
         username = request.POST.get("username")
         email = request.POST.get("email")
         password = request.POST.get("password")
+        if(username == ''):
+            messages.error(request, "Enter Username", extra_tags="danger")
+            return redirect('index')
+        elif(email == ''):
+            messages.error(request, "Enter Email", extra_tags="danger")
+            return redirect('index')
+        elif(password == ''):
+            messages.error(request, "Enter Password", extra_tags="danger")
+            return redirect('index')
 
         if User.objects.filter(username = username):
             messages.error(request, "Username already exists", extra_tags="danger")
@@ -178,6 +191,12 @@ def signin(request):
     if request.method == 'POST':
         username = request.POST.get("username")
         password = request.POST.get("password")
+        if(username == ''):
+            messages.error(request, "Enter Username", extra_tags="danger")
+            return redirect('index')
+        elif(password == ''):
+            messages.error(request, "Enter Password", extra_tags="danger")
+            return redirect('index')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)

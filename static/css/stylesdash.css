@@ -96,10 +96,13 @@ body {
     border-radius: 10px;
 }
 
-
+.item-con-container{
+    height: 84vh;
+}
 .items-container123 {
+    height: 100%;
     background-color: #5b5b5b;
-    margin: 1vh 0vw 1vh 1vh;
+    margin: 0vh 0vw 1vh 1vh;
     background-image: url(iot19.png);
     background-position: center;
     background-size: contain;
@@ -120,6 +123,24 @@ body {
 .items-container123::-webkit-scrollbar-thumb {
     background-color: #3b3b3b;
     border-radius: 10px;
+}
+
+.gphead{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 4px 6px 15px;
+}
+
+.gphead h2{
+    color: #ccc02c;
+    font-size: 4vmin;
+    background-color: #303030;
+    max-width: fit-content;
+    border-radius: 1vmin;
+    padding: 8px;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .iotim1 {

@@ -84,23 +84,52 @@
                 <p style="display: none;" id="para123">{{ gpname }}</p>
             </div>
 
-            <div class="items-container123">
+            <div class="item-con-container">
+                <div class="gphead"><h2>{{ gpname }}</h2></div>
+                <div class="items-container123">
 
-                {% for listdata in list %}
-                <span class="item-item">
-                    <p class="devicename">{{ listdata.appliancename }}</p>
-                    <a href="{% url 'changestatus' listdata.id %}" class="devicestatus">{{ listdata.status }}</a>
-                    <a href="{% url 'deleteitem' listdata.id %}" class="gpi456"><i class="fa-solid fa-trash"></i></a>
-                </span>
-                
-                {% endfor %}
-                <form method="POST" action='new/saveitem' class="item-item" id="last-form">
-                    {% csrf_token %}
-                    <input type="text" name="itemname" id="item-input" placeholder="New Device">
-                    <input type="hidden" name="gname" id="g-nameinput" value="">
-                    <button class="devicebutton" id="newdevice" type="submit"> New</button>
-                </form>
-                
+                    {% for listdata in list %}
+                    <span class="item-item">
+                        <p class="devicename">{{ listdata.appliancename }}</p>
+                        <a href="{% url 'changestatus' listdata.id %}" class="devicestatus">{{ listdata.status }}</a>
+                        <a href="{% url 'deleteitem' listdata.id %}" class="gpi456"><i
+                                class="fa-solid fa-trash"></i></a>
+                    </span>
+
+                    <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+                <span class="item-item"></span>
+
+                    {% endfor %}
+                    <form method="POST" action='new/saveitem' class="item-item" id="last-form">
+                        {% csrf_token %}
+                        <input type="text" name="itemname" id="item-input" placeholder="New Device">
+                        <input type="hidden" name="gname" id="g-nameinput" value="">
+                        <button class="devicebutton" id="newdevice" type="submit"> New</button>
+                    </form>
+
+                </div>
             </div>
 
             <div class="sidebar"><i class="fa-solid fa-angles-right"></i></div>
@@ -111,7 +140,7 @@
         var gpbutton = document.querySelectorAll(".gpi321")
         var gpinput = document.querySelector("#g-nameinput")
         var para = document.querySelector("#para123")
-        
+
         for (const element1 of gpbutton) {
             if (element1.innerText == para.innerText) {
                 element1.style.color = "#ccc02c"
@@ -155,11 +184,19 @@
 
     <script>
         var sidebar = document.querySelector(".sidebar")
-        sidebar.addEventListener('click', function(){
-            var gp12 =document.querySelector(".groups-container123")
+        sidebar.addEventListener('click', function () {
+            var gp12 = document.querySelector(".groups-container123")
             gp12.classList.toggle("newgp")
             sidebar.classList.toggle("newside")
         })
+    </script>
+    <script>
+        var gphead = document.querySelector(".gphead")
+        var itemscontainer123 = document.querySelector(".items-container123")
+        if(gphead.innerText == ''){
+            gphead.style.display = "None"
+            itemscontainer123.style.margin = "1vh 0vw 1vh 1vh"
+        }
     </script>
 
     <script>
